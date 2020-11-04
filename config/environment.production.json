@@ -1,0 +1,13 @@
+{
+  "debug": false,
+  "testing": false,
+  "swissdata": {
+    "host": "https://api.swissdata.io/prod"
+  },
+  "stripe": {
+    "apiKey": ""
+  },
+  "ipstack": {
+    "apiKey": ""
+  }
+}

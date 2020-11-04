@@ -1,0 +1,19 @@
+/* Styles for page Account */
+
+.account-cards {
+  max-width: 700px;
+  margin: auto;
+}
+
+.account-cards ux-card {
+  margin-bottom: 50px;
+}
+
+.account-cards ux-card-footer {
+  justify-content: center;
+}
+
+
+#credit-card-form ar-spinner-line {
+  margin-bottom: 3px;
+}

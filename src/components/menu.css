@@ -1,0 +1,8 @@
+ar-drawer#menu {
+  background: white;
+  box-shadow: var(--aurelia-ux--design-elevation4dp);
+}
+ar-drawer#menu h3 {
+  margin: 0px;
+  padding: 16px;
+}

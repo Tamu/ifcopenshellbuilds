@@ -1,0 +1,38 @@
+<template>
+  <require from="aurelia-resources/animate.css"></require>
+  <require from="aurelia-resources/basics.css"></require>
+  <require from="aurelia-resources/dialog-card.css"></require>
+  <require from="./typography.css"></require>
+  <require from="./base/app-base.css"></require>
+  <require from="./app.css"></require>
+  <require from="./base/dark-base.css"></require>
+  <require from="./dark.css"></require>
+  
+  <div class="notify-top-host"></div>
+  <div class="notify-bottom-host"></div>
+  <noie></noie>
+  
+
+  <div class="requesting-indicator" if.bind="global.swissdataApi.http.isRequesting & debounce:150">
+    <ar-spinner-line height="3px" active.bind="true"></ar-spinner-line>
+  </div>
+
+  <!-- Smart toolbar displayed in all application, on top of router view -->
+  <ar-smart-toolbar class="abs-toolbar-top">
+    <!-- Left part of the toolbar -->
+    <ux-icon icon="menu" slot="left" ar-drawer-toggle="menu" class="click"></ux-icon>
+
+    <!-- Center part of the toolbar -->
+    <span slot="center" class="click">Application</span>
+
+    <ux-icon icon="person" show.bind="!global.state.swissdata.authenticated" slot="right" click.delegate="global.navigateToRoute('account')" class="click"></ux-icon>
+    <ux-icon icon="exit_to_app" show.bind="global.state.swissdata.authenticated" slot="right" click.delegate="global.logout()" class="click"></ux-icon>
+  </ar-smart-toolbar>
+
+
+  <menu drawer.bind="menuDrawer" if.bind="global.ready"></menu>
+  <div class="abs-from-toolbar-top vscroll">
+    <router-view if.bind="global.ready"></router-view>
+  </div>
+
+</template>

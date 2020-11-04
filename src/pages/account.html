@@ -1,0 +1,48 @@
+<template>
+  <require from="./account.css"></require>
+  <section>
+    <h1 style="text-align:center;" t="account.My Account"></h1>
+
+    <div class="account-cards">
+      <ux-card>
+        <ux-card-header color="primary" t="account.My Profile"></ux-card-header>
+        <ux-card-content>
+          <ux-grid>
+            <ux-grid-cell sm="8" class="left">
+              <h3>Profile details</h3>
+              <template if.bind="global.state.swissdata && global.state.swissdata.user">
+                ${global.state.swissdata.user.firstname} ${global.state.swissdata.user.lastname}
+              </template>
+              <template if.bind="global.state.profile">
+                <br>${global.state.profile.street}
+                <br>${global.state.profile.zip} ${global.state.profile.city}
+              </template>
+            </ux-grid-cell>
+            <ux-grid-cell sm="4" class="left" align-self-middle>
+              <ux-button click.delegate="global.navigateToRoute('profile')"><span t="profile.Edit My Profile"></span></ux-button>
+            </ux-grid-cell>
+            <ux-grid-cell sm="8" class="left">
+              <h3>Login credentials</h3>
+              ${global.state.swissdata.user.email}
+              <br>${global.state.swissdata.user.mobile}
+            </ux-grid-cell>
+            <ux-grid-cell sm="4" class="left" align-self-middle>
+              <ux-button click.delegate="global.navigateToRoute('credentials')"><span t="profile.Edit Credentials"></span></ux-button>
+            </ux-grid-cell>
+          </ux-grid>
+          
+          
+        </ux-card-content>
+        <ux-card-footer>
+          
+        </ux-card-footer>
+      </ux-card>
+
+    </div>
+  </section>
+
+  <section class="center maxtext">
+    <ux-button click.delegate="global.logout()"><span t="Logout"></span></ux-button>
+  </section>
+
+</template>

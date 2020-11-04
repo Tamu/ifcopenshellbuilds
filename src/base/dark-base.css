@@ -1,0 +1,32 @@
+.dark {
+  background: var(--aurelia-ux--design-primary);
+  --aurelia-ux--design-app-foreground: var(--aurelia-ux--design-primary-foreground);
+  --aurelia-ux--design-control-background: white;
+  --aurelia-ux--design-control-foreground: #333;
+  --aurelia-ux--design-control-label-foreground: #999;
+  --aurelia-ux--button-background: var(--aurelia-ux--design-primary);
+  --aurelia-ux--button-foreground: var(--aurelia-ux--design-primary-foreground);
+  --aurelia-ux--input-info-error: var(--ux-swatch--red-p50);
+  color: var(--aurelia-ux--design-app-foreground);
+}
+
+.dark .ux-input-component {
+  --background-hover: #efefef;
+  --active-color: var(--aurelia-ux--design-accent);
+}
+
+.dark,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6,
+.dark p {
+  /* color: var(--aurelia-ux--design-primary-foreground); */
+}
+
+.dark ux-button > button.ux-button--outline,
+.dark ux-button > button.ux-button--text {
+  --aurelia-ux--button-background: var(--aurelia-ux--design-primary-foreground);
+}

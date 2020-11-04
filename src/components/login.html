@@ -1,0 +1,31 @@
+<template>
+  <getting-started 
+    view-model.ref="gs"
+    show.bind="global.ready"
+    class="au-animate animate-fade dark" 
+    locales-filter.bind="['fr_CH','de_CH', 'it_CH']">
+    <ux-button type="text" slot="footer" click.delegate="global.openPrivacy()">Privacy</ux-button>
+    <ux-button type="text" slot="footer" click.delegate="global.openTerms()">Terms</ux-button>
+
+    <tour-step slot="post-login" id="mobile-email">
+
+      <h4 t="gettingStarted.Welcome"></h4>
+      <p class="getting-started--no-wrap-span" t="[html]gettingStarted.In order to serve you well, we need the following informations"></p>
+      
+      <template if.bind="global.state.swissdata.authenticated">
+        <template if.bind="!global.state.swissdata.user.mobileValidated">
+          <swissdata-user-field property="mobile" changed.delegate="mobileChanged()"></swissdata-user-field>
+        </template>
+        <template if.bind="!global.state.swissdata.user.emailValidated">
+          <swissdata-user-field property="email" changed.delegate="emailChanged()"></swissdata-user-field>
+        </template>
+      </template>
+
+      <div class="getting-started__secondary-buttons-row">
+        <ux-button type="text" click.delegate="global.navigateToRoute('account')"><span t="gettingStarted.Skip"></ux-button>
+      </div>
+
+    </tour-step>
+
+  </getting-started>
+</template>

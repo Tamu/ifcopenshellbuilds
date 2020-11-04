@@ -1,0 +1,4 @@
+{
+  "name": "comp",
+  "description": "Creates a component class and template (view model and view), placing them in the component folder."
+}

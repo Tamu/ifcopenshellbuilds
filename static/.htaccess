@@ -1,0 +1,14 @@
+RewriteEngine on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#RewriteRule (.*) https://site.com/$1 [R=301,L]
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#(https://www.infomaniak.com/fr/support/faq/2131)
+
+<ifModule mod_rewrite.c>
+  Options +FollowSymLinks
+  IndexIgnore */*
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule (.*) index.html
+</ifModule>

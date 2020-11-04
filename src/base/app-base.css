@@ -1,0 +1,31 @@
+/* normalize all ar-drawer to same z-index position */
+body ar-drawer {
+  z-index: 10;
+}
+body .drawer-overlay {
+  z-index: 9;
+}
+
+.requesting-indicator {
+  position: absolute;
+  top: 49px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+}
+
+
+body > .notify-top-host {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 400;
+}
+
+body > .notify-bottom-host {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 400;
+}

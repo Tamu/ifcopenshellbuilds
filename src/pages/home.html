@@ -1,0 +1,19 @@
+<template>
+  <require from="./home.css"></require>
+  <section>
+    <h1>Home</h1>
+    <p>This is the Swissdata Skeleton</p>
+
+    <h2>What can I do ?</h2>
+    <ux-button type="text" click.delegate="global.navigateToRoute('exemple')">Check out these exemples</ux-button>
+
+    <ux-grid>
+      <ux-grid-cell sm="6">
+        <p>This is how you can display images</p>
+      </ux-grid-cell>
+      <ux-grid-cell sm="6">
+        <img class="welcome-image" src="/images/welcome.jpg" style="width: 250px;">
+      </ux-grid-cell>
+    </ux-grid>
+  </section>
+</template>

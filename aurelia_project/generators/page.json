@@ -1,0 +1,4 @@
+{
+  "name": "page",
+  "description": "Creates a page class and template (view model and view), placing them in the src/pages folder."
+}

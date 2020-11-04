@@ -1,0 +1,132 @@
+{
+  "name": "ifcopenshellbuilds",
+  "description": "An Aurelia client application.",
+  "version": "0.1.0",
+  "repository": {
+    "type": "???",
+    "url": "???"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@aurelia-ux/components": "^0.25.0",
+    "@aurelia-ux/core": "^0.25.0",
+    "@aurelia-ux/icons": "^0.25.0",
+    "@types/i18next-xhr-backend": "^1.4.2",
+    "aurelia-animator-css": "^1.0.4",
+    "aurelia-bootstrapper": "^2.3.2",
+    "aurelia-dialog": "^2.0.0",
+    "aurelia-i18n": "^2.3.2",
+    "aurelia-notify": "^0.8.1",
+    "aurelia-shop-admin": "git+https://git.mintello.com/platform5/aurelia-shop-admin.git#9aa891de157a85f7cd34875abbd296a3f313553e",
+    "aurelia-store": "^1.6.0",
+    "aurelia-three": "git+https://git.mintello.com/platform5/aurelia-three.git#87f4b57e43e134017606acd6d620c4f07809d459",
+    "aurelia-validation": "^1.6.0",
+    "bcx-aurelia-reorderable-repeat": "^1.3.5",
+    "fastclick": "^1.0.6",
+    "i18next": "^19.3.4",
+    "i18next-xhr-backend": "^3.2.2",
+    "moment": "^2.29.1",
+    "numeral": "^2.0.6",
+    "path": "^0.12.7",
+    "remove-accents": "^0.4.2",
+    "resize-observer-polyfill": "^1.5.1",
+    "whatwg-fetch": "^3.4.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.9",
+    "@types/lodash": "^4.14.117",
+    "@types/node": "^13.11.0",
+    "@types/webpack": "^4.4.15",
+    "app-settings-loader": "^1.0.2",
+    "aurelia-cli": "^1.2.3",
+    "aurelia-loader-nodejs": "^1.0.1",
+    "aurelia-pal-nodejs": "^1.2.0",
+    "aurelia-testing": "^1.0.0",
+    "aurelia-tools": "^2.0.0",
+    "aurelia-webpack-plugin": "^4.0.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.0",
+    "css-loader": "^3.5.1",
+    "duplicate-package-checker-webpack-plugin": "^3.0.0",
+    "expose-loader": "^0.7.5",
+    "file-loader": "^6.0.0",
+    "gulp": "^4.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-tap": "^2.0.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.0.4",
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "jest": "^24.1.0",
+    "jest-cli": "^24.1.0",
+    "jest-transform-stub": "^2.0.0",
+    "json-loader": "^0.5.7",
+    "mini-css-extract-plugin": "^0.9.0",
+    "minimatch": "^3.0.4",
+    "promise-polyfill": "^8.1.0",
+    "style-loader": "^1.1.3",
+    "through2": "^3.0.0",
+    "tree-kill": "^1.2.1",
+    "ts-jest": "^24.0.0",
+    "ts-loader": "^6.2.2",
+    "ts-node": "^8.8.2",
+    "typescript": "^3.1.2",
+    "url-loader": "^4.0.0",
+    "vinyl-fs": "^3.0.3",
+    "webpack": "^4.27.0",
+    "webpack-bundle-analyzer": "^3.0.4",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "scripts": {
+    "build": "webpack --env.environment=production --env.production --extractCss",
+    "build:dev": "webpack --extractCss",
+    "build:dev:production": "webpack --env.environment=development --env.production --extractCss",
+    "build:stage": "webpack --env.environment=staging --extractCss",
+    "build:stage:production": "webpack --env.environment=staging --env.production --extractCss",
+    "start": "webpack-dev-server --extractCss",
+    "start:stage": "webpack-dev-server --env.environment=staging --extractCss",
+    "start:prod": "webpack-dev-server --env.environment=production --extractCss",
+    "analyze": "webpack --env.production --analyze",
+    "test": "au test"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^aurelia-binding$": "<rootDir>/node_modules/aurelia-binding"
+    },
+    "modulePaths": [
+      "<rootDir>/src",
+      "<rootDir>/node_modules"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
+    "transform": {
+      "^.+\\.(css|less|sass|scss|styl|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "jest-transform-stub",
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "\\.spec\\.(ts|js)$",
+    "setupFiles": [
+      "<rootDir>/test/jest-pretest.ts"
+    ],
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,ts}",
+      "!**/*.spec.{js,ts}",
+      "!**/node_modules/**",
+      "!**/test/**"
+    ],
+    "coverageDirectory": "<rootDir>/test/coverage-jest",
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "html"
+    ]
+  }
+}

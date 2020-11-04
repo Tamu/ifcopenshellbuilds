@@ -1,0 +1,48 @@
+<template>
+  <!-- Menu screen (from left) -->
+  <require from="./menu.css"></require>
+  <ar-drawer id="menu" position="left" view-model.ref="drawer">
+    <ux-icon icon="close" click.delegate="drawer.close()" class="fix-topright"></ux-icon>
+    <h3>Menu</h3>
+    <ux-list>
+      <ux-list-item click.delegate="gotoRoute('home')" class="click">
+        <div class="ux-list-item__content">
+          <span t="menu.Home"></span>
+        </div>
+        <div class="ux-list-item__action-item">
+          <ux-icon icon="chevron_right"></ux-icon>
+        </div>
+      </ux-list-item> 
+      <ux-list-item click.delegate="gotoRoute('account')" class="click">
+        <div class="ux-list-item__content">
+          <span t="menu.My Account"></span>
+        </div>
+        <div class="ux-list-item__action-item">
+          <ux-icon icon="chevron_right"></ux-icon>
+        </div>
+      </ux-list-item> 
+      <ux-list-item click.delegate="gotoRoute('dico')" class="click">
+          <div class="ux-list-item__content">
+            <span t="menu.Dico"></span>
+          </div>
+          <div class="ux-list-item__action-item">
+            <ux-icon icon="chevron_right"></ux-icon>
+          </div>
+        </ux-list-item>
+
+    </ux-list>
+
+    <hr if.bind="global.state.swissdata.authenticated">
+
+    <ux-list>
+      <ux-list-item click.delegate="logout()" if.bind="global.state.swissdata.authenticated" class="click">
+        <div class="ux-list-item__content">
+          <span t="menu.Logout"></span>
+        </div>
+        <div class="ux-list-item__action-item">
+          <ux-icon icon="exit_to_app"></ux-icon>
+        </div>
+      </ux-list-item>
+    </ux-list>
+  </ar-drawer>
+</template>

@@ -1,0 +1,14 @@
+{
+  "debug": true,
+  "testing": true,
+  "swissdata": {
+    "host": "http://localhost:3000",
+    "apiKey": "3b38b3bd0913"
+  },
+  "stripe": {
+    "apiKey": ""
+  },
+  "ipstack": {
+    "apiKey": ""
+  }
+}
