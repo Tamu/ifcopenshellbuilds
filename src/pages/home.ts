@@ -121,6 +121,15 @@ export class Home {
     
   }
 
+  scrollDown() {
+    this.scrollingContainer() ;
+  }
+
+  scrollingContainer(): HTMLElement | null {
+    return document.querySelector('body > .vscroll');
+  }
+
+
 }
 
 export class DateFormatValueConverter {

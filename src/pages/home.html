@@ -25,15 +25,18 @@
           <ux-checkbox id="macos" checked.bind="macos" change.delegate="updateFilter()"></ux-checkbox><label
             for="macos"> macOS</label>
         </div>
-      <div style="margin: 80px 0 50px 0;">
-        <p><a href="https://github.com/IfcOpenBot/IfcOpenShell" target="_blank">Original IfcOpenBot source code</a></p>
-        <p><a href="https://github.com/Tamu/ifcopenshellbuilds" target="_blank">Fork this page On GitHub</a></p>
-      </div>
+        <div style="margin-top: 50px">
+          <ux-button smooth-scroll="container.bind:'.abs-from-toolbar-top.vscroll'" href="#start"><ux-icon icon="keyboard_arrow_down"></ux-icon> View latest builds</ux-button>
+        </div>
+        <div class="copylink" style="margin-bottom: 50px;">
+          <p><a href="https://github.com/IfcOpenBot/IfcOpenShell" target="_blank">Original IfcOpenBot source code</a></p>
+          <p><a href="https://github.com/Tamu/ifcopenshellbuilds" target="_blank">Fork this page On GitHub</a></p>
+        </div>
     </ux-form>
   </ar-main-header>
 
   <section>
-    <ux-grid>
+    <ux-grid id="start">
       <ux-card sm="6" md="4" lg="3" repeat.for="file of ifcFiles">
         <!-- <ux-card-header>
         </ux-card-header> -->
