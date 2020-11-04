@@ -1,19 +1,49 @@
 <template>
   <require from="./home.css"></require>
+ 
+  <ar-main-header background-color="var(--ux-design--primary)" background-url="images/welcome.jpg" class="flex-center">
+    <ux-form class="center" id="header">
+      <h1>IFC OpenShell builds</h1>
+        <h3>Library</h3>
+        <div class="form-row form-row-margin">
+          <ux-checkbox id="ifcgeomserver" checked.bind="ifcgeomserver" change.delegate="updateFilter()"></ux-checkbox><label
+            for="ifcgeomserver"> IfcGeomServer</label>&nbsp;&nbsp;
+          <ux-checkbox id="libifcconvert" checked.bind="libifcconvert" change.delegate="updateFilter()"></ux-checkbox><label
+            for="libifcconvert"> IfcConvert</label>&nbsp;&nbsp;
+        </div>
+        <br>
+        <h3>OS platform</h3>
+        <div class="form-row form-row-margin">
+          <ux-checkbox id="win32" checked.bind="win32" change.delegate="updateFilter()"></ux-checkbox><label
+            for="win32"> Win32</label>&nbsp;&nbsp;
+          <ux-checkbox id="win64" checked.bind="win64" change.delegate="updateFilter()"></ux-checkbox><label
+            for="win64"> Win64</label>&nbsp;&nbsp;
+          <ux-checkbox id="linux32" checked.bind="linux32" change.delegate="updateFilter()"></ux-checkbox><label
+            for="linux32"> Linux32</label>&nbsp;&nbsp;
+          <ux-checkbox id="linux64" checked.bind="linux64" change.delegate="updateFilter()"></ux-checkbox><label
+            for="linux64"> Linux64</label>&nbsp;&nbsp;
+          <ux-checkbox id="macos" checked.bind="macos" change.delegate="updateFilter()"></ux-checkbox><label
+            for="macos"> macOS</label>
+        </div>
+      <div style="margin: 80px 0 50px 0;">
+        <p><a href="https://github.com/IfcOpenBot/IfcOpenShell" target="_blank">Original IfcOpenBot source code</a></p>
+        <p><a href="https://github.com/Tamu/ifcopenshellbuilds" target="_blank">Fork this page On GitHub</a></p>
+      </div>
+    </ux-form>
+  </ar-main-header>
+
   <section>
-    <h1>Home</h1>
-    <p>This is the Swissdata Skeleton</p>
-
-    <h2>What can I do ?</h2>
-    <ux-button type="text" click.delegate="global.navigateToRoute('exemple')">Check out these exemples</ux-button>
-
     <ux-grid>
-      <ux-grid-cell sm="6">
-        <p>This is how you can display images</p>
-      </ux-grid-cell>
-      <ux-grid-cell sm="6">
-        <img class="welcome-image" src="/images/welcome.jpg" style="width: 250px;">
-      </ux-grid-cell>
+      <ux-card sm="6" md="4" lg="3" repeat.for="file of ifcFiles">
+        <!-- <ux-card-header>
+        </ux-card-header> -->
+        <ux-card-content>
+            <h4>${file.library} : ${file.branch}</h2>
+            <small>${file.version} - ${file.lastModified | dateFormat}</small>&nbsp;
+            <a href="${urlFolder}${file.filename}"><ux-button type="outline">${file.platform}</ux-button></a>
+        </ux-card-content>
+      </ux-card>
     </ux-grid>
   </section>
+
 </template>

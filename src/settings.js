@@ -20,20 +20,20 @@ var settings = {
   },
   ux: {
     design: {
-      primary: '#3F51B5',
-      primaryForeground: '#FFFFFF',
-      accent:  '#c0392b',
-      accentForeground: '#FFFFFF',
+      primary: '#8cc63f',
+      primaryForeground: '#fff',
+      accent:  '#4CB8D4',
+      accentForeground: '#fff',
 
-      primaryLight: '#C5CAE9',
-      primaryLightForeground: '#9E9E9E',
-      primaryDark: '#303F9F',
-      primaryDarkForeground: '#FFFFFF',
+      primaryLight: '#7BE0DD',
+      primaryLightForeground: '#000',
+      primaryDark: '#00989B',
+      primaryDarkForeground: '#fff',
 
-      accentLight: '#FF80AB',
-      accentLightForeground: '#FFFFFF',
-      accentDark: '#F50057',
-      accentDarkForeground: '#FFFFFF',
+      accentLight: '#8bd5e3',
+      accentLightForeground: '#000',
+      accentDark: '#258CB1',
+      accentDarkForeground: '#fff',
 
       appBackground: '#FAFAFA',
       appForeground: '#212121',
