@@ -11,7 +11,8 @@ export class Home {
   
   progress: number = 0;
   inProgress: string = "Reading in progress";
-  urlFolder : string = "/images/ifc.xml";
+  urlFolder : string = "https://s3.amazonaws.com/ifcopenshell-builds/";
+  ifcXML : string = "/images/ifc.xml";
 
   viewExport : boolean = false;
   corridor: number[] = [];
@@ -39,7 +40,7 @@ export class Home {
   constructor(public global: Global) {
     
     let xmlDoc=new window.XMLHttpRequest();
-    xmlDoc.open("GET",this.urlFolder,false);
+    xmlDoc.open("GET",this.ifcXML,false);
     xmlDoc.send("");
     this.xmlText =  xmlDoc.response;
     this.TransXML();
