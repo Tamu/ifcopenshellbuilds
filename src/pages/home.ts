@@ -11,7 +11,7 @@ export class Home {
   
   progress: number = 0;
   inProgress: string = "Reading in progress";
-  urlFolder : string = "https://s3.amazonaws.com/ifcopenshell-builds/";
+  urlFolder : string = "/images/ifc.xml";
 
   viewExport : boolean = false;
   corridor: number[] = [];
