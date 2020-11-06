@@ -1,10 +1,13 @@
 # `ifcopenshellbuilds`
 
+You can view demo on [ifc.mintello.com](https://ifc.mintello.com).
+
+## Run dev app
+
 This project is bootstrapped by [aurelia-cli](https://github.com/aurelia/cli).
 
 For more information, go to https://aurelia.io/docs/cli/webpack
 
-## Run dev app
 
 Run `npm start`, then open `http://localhost:8080`
 
